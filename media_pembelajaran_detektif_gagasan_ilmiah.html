@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detektif Gagasan Ilmiah - Bahasa Indonesia Kelas XII</title>
+<style>
+:root{
+  --primary:#3157d5;--secondary:#eef2ff;--accent:#f59e0b;--success:#15803d;
+  --danger:#b91c1c;--text:#172033;--muted:#667085;--card:#fff;--bg:#f5f7fb;
+}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+header{background:linear-gradient(135deg,#253b9d,#5474e8);color:white;padding:48px 20px}
+.hero{max-width:1100px;margin:auto}.hero h1{font-size:clamp(2rem,5vw,3.3rem);margin:0 0 10px}.hero p{font-size:1.1rem;max-width:760px}
+nav{position:sticky;top:0;z-index:10;background:white;box-shadow:0 2px 12px #0001;padding:10px}
+.navin{max-width:1100px;margin:auto;display:flex;gap:8px;overflow:auto}
+nav button{border:0;background:transparent;padding:9px 13px;border-radius:9px;cursor:pointer;font-weight:600;color:#475467;white-space:nowrap}
+nav button:hover{background:var(--secondary);color:var(--primary)}
+main{max-width:1100px;margin:auto;padding:28px 18px}
+section{display:none}.active{display:block}.card{background:var(--card);border-radius:18px;padding:25px;margin:18px 0;box-shadow:0 5px 22px #17203312}
+h2{color:#253b9d;margin-top:0} h3{margin-bottom:8px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.type{padding:20px;border-radius:15px;border:2px solid #e4e7ec}.fact{border-color:#86efac;background:#f0fdf4}.opinion{border-color:#93c5fd;background:#eff6ff}.assumption{border-color:#fcd34d;background:#fffbeb}
+.badge{display:inline-block;padding:4px 10px;border-radius:99px;background:var(--secondary);color:var(--primary);font-weight:700;font-size:.85rem}
+.article{background:#fffdf7;border-left:5px solid var(--accent);padding:22px;border-radius:10px}
+.statement{padding:18px;border:1px solid #e4e7ec;border-radius:12px;margin:12px 0}
+select,input[type=text]{padding:10px;border:1px solid #cbd5e1;border-radius:9px;font-size:1rem}
+button.primary,.btn{background:var(--primary);color:white;border:0;padding:11px 17px;border-radius:10px;cursor:pointer;font-weight:700}
+button.primary:hover,.btn:hover{filter:brightness(.94)}
+.feedback{display:none;margin-top:10px;padding:12px;border-radius:10px;background:#f8fafc}.correct{background:#ecfdf3!important;color:#166534}.wrong{background:#fef2f2!important;color:#991b1b}
+.quiz-q{border:1px solid #e4e7ec;border-radius:15px;padding:20px;margin:18px 0}.option{display:block;padding:9px;margin:7px 0;border-radius:8px}.option:hover{background:#f3f4f6}
+.result{text-align:center;padding:30px;background:linear-gradient(135deg,#eef2ff,#fff);border-radius:18px}
+.score{font-size:3.2rem;font-weight:800;color:var(--primary)}
+.progress{height:10px;background:#e5e7eb;border-radius:99px;overflow:hidden}.progress>div{height:100%;background:var(--primary);width:0}
+table{width:100%;border-collapse:collapse}th,td{padding:10px;border-bottom:1px solid #e5e7eb;text-align:left}
+footer{text-align:center;padding:35px;color:var(--muted)}
+@media(max-width:600px){header{padding:35px 18px}.card{padding:19px}}
+</style>
+</head>
+<body>
+<header>
+<div class="hero">
+<span class="badge">Bahasa Indonesia • Kelas XII</span>
+<h1>🔎 Detektif Gagasan Ilmiah</h1>
+<p>Media pembelajaran interaktif untuk mengevaluasi fakta, opini, dan asumsi dalam teks artikel ilmiah.</p>
+</div>
+</header>
+
+<nav><div class="navin">
+<button onclick="show('beranda')">Beranda</button>
+<button onclick="show('materi')">Materi</button>
+<button onclick="show('latihan')">Latihan</button>
+<button onclick="show('artikel')">Artikel</button>
+<button onclick="show('evaluasi')">Evaluasi</button>
+</div></nav>
+
+<main>
+<section id="beranda" class="active">
+<div class="card">
+<h2>Selamat datang, Detektif!</h2>
+<p>Di media ini kamu akan belajar membaca artikel ilmiah secara kritis. Tugasmu bukan hanya menemukan informasi, tetapi juga memeriksa <strong>jenis gagasan, bukti, dan kekuatan kesimpulan</strong>.</p>
+<h3>Tujuan Pembelajaran</h3>
+<ul>
+<li>Mengidentifikasi fakta, opini, dan asumsi dalam artikel ilmiah.</li>
+<li>Menjelaskan alasan pengelompokan suatu gagasan.</li>
+<li>Mengevaluasi gagasan berdasarkan bukti yang tersedia.</li>
+<li>Menyimpulkan apakah suatu gagasan didukung bukti yang memadai.</li>
+</ul>
+<button class="primary" onclick="show('materi')">Mulai Belajar →</button>
+</div>
+<div class="card">
+<h2>Petunjuk</h2>
+<ol>
+<li>Baca materi singkat.</li><li>Kerjakan latihan klasifikasi.</li><li>Baca artikel dengan teliti.</li><li>Kerjakan evaluasi akhir.</li>
+</ol>
+</div>
+</section>
+
+<section id="materi">
+<div class="card">
+<h2>Materi: Fakta, Opini, dan Asumsi</h2>
+<div class="grid">
+<div class="type fact"><h3>🟢 Fakta</h3><p>Pernyataan yang dapat <strong>dibuktikan atau diverifikasi</strong> melalui data, penelitian, dokumen, pengamatan, atau sumber tepercaya.</p><p><strong>Detektif bertanya:</strong> “Apa buktinya?”</p></div>
+<div class="type opinion"><h3>🔵 Opini</h3><p>Pendapat, penilaian, atau pandangan yang menunjukkan sikap penulis. Opini dapat didukung alasan, tetapi tetap merupakan penilaian.</p><p><strong>Detektif bertanya:</strong> “Apakah ini penilaian atau pandangan?”</p></div>
+<div class="type assumption"><h3>🟠 Asumsi</h3><p>Anggapan yang digunakan sebagai dasar pemikiran tetapi <strong>belum cukup dibuktikan</strong>. Asumsi sering muncul saat penulis membuat hubungan atau kesimpulan yang terlalu cepat.</p><p><strong>Detektif bertanya:</strong> “Apakah anggapan ini sudah terbukti?”</p></div>
+</div>
+</div>
+<div class="card">
+<h2>Tips Mengevaluasi Gagasan</h2>
+<table><tr><th>Langkah</th><th>Pertanyaan</th></tr>
+<tr><td>1. Identifikasi</td><td>Apa sebenarnya yang diklaim penulis?</td></tr>
+<tr><td>2. Klasifikasi</td><td>Apakah klaim tersebut fakta, opini, atau asumsi?</td></tr>
+<tr><td>3. Cari bukti</td><td>Data atau sumber apa yang mendukungnya?</td></tr>
+<tr><td>4. Uji hubungan</td><td>Apakah bukti benar-benar mendukung kesimpulan?</td></tr>
+<tr><td>5. Nilai batasan</td><td>Apakah kata seperti “semua”, “pasti”, atau “terbesar” membuat klaim terlalu luas?</td></tr>
+</table>
+</div>
+</section>
+
+<section id="latihan">
+<div class="card">
+<h2>Latihan Cepat: Klasifikasi Gagasan</h2>
+<p>Pilih jenis gagasan yang paling tepat, lalu lihat umpan baliknya.</p>
+<div id="practice"></div>
+</div>
+</section>
+
+<section id="artikel">
+<div class="card">
+<h2>Artikel Ilmiah Populer</h2>
+<h3>Penggunaan Media Sosial dan Konsentrasi Belajar Remaja</h3>
+<div class="article">
+<p>Media sosial telah menjadi bagian dari kehidupan sehari-hari banyak remaja. Platform digital dapat digunakan untuk berkomunikasi, memperoleh informasi, dan mendukung kegiatan belajar. Namun, penggunaan media sosial juga dapat menghadirkan gangguan ketika seseorang sedang berkonsentrasi.</p>
+<p>Sejumlah penelitian tentang penggunaan perangkat digital menunjukkan bahwa notifikasi dan perpindahan perhatian yang berulang dapat mengganggu fokus seseorang. Ketika perhatian berpindah dari tugas belajar ke pesan atau konten digital, siswa membutuhkan waktu untuk kembali memusatkan perhatian pada tugasnya.</p>
+<p>Dalam konteks belajar, durasi penggunaan media sosial tidak dapat dijadikan satu-satunya ukuran untuk menentukan dampaknya. Jenis aktivitas, tujuan penggunaan, waktu penggunaan, dan kondisi belajar juga perlu dipertimbangkan. Menggunakan media sosial untuk mencari sumber belajar, misalnya, berbeda dengan menggunakan media sosial secara terus-menerus ketika sedang mengerjakan tugas.</p>
+<p>Oleh karena itu, pernyataan bahwa media sosial <strong>selalu</strong> menurunkan prestasi belajar perlu diperiksa secara hati-hati. Kesimpulan yang terlalu luas dapat mengabaikan perbedaan tujuan dan pola penggunaan. Evaluasi yang baik seharusnya melihat bukti penelitian serta kondisi yang menyertai penggunaan media sosial.</p>
+<p><em>Catatan pembelajaran:</em> Artikel ini merupakan teks latihan yang disusun untuk kegiatan pembelajaran. Siswa tetap perlu membedakan informasi yang dapat diverifikasi dari penilaian dan anggapan yang belum didukung bukti memadai.</p>
+</div>
+</div>
+<div class="card">
+<h2>Tantangan “Buru Gagasan”</h2>
+<p>Tentukan jenis gagasan pada setiap pernyataan berdasarkan artikel.</p>
+<div id="hunt"></div>
+</div>
+</section>
+
+<section id="evaluasi">
+<div class="card">
+<h2>Evaluasi Akhir</h2>
+<p>Kerjakan semua soal. Setelah selesai, klik <strong>Periksa Jawaban</strong>. Skor dan umpan balik akan muncul otomatis.</p>
+<div class="progress"><div id="progress"></div></div>
+<form id="quiz"></form>
+<button class="primary" onclick="grade(event)">Periksa Jawaban</button>
+<button class="btn" onclick="resetQuiz()" style="margin-left:8px">Ulangi</button>
+</div>
+<div id="result"></div>
+</section>
+</main>
+<footer>Media Pembelajaran Bahasa Indonesia Kelas XII • Detektif Gagasan Ilmiah</footer>
+
+<script>
+const practiceData=[
+["“Berdasarkan hasil penelitian, notifikasi yang muncul berulang dapat mengganggu perhatian.”","Fakta","Ada rujukan pada hasil penelitian sehingga pernyataan tersebut dapat diverifikasi."],
+["“Media sosial adalah musuh terbesar siswa.”","Opini","Ungkapan “terbesar” merupakan penilaian yang perlu didukung pembanding dan bukti."],
+["“Jika siswa memakai media sosial setiap hari, prestasinya pasti menurun.”","Asumsi","Hubungan sebab-akibat dan kata “pasti” belum otomatis terbukti hanya dari kebiasaan penggunaan."],
+["“Siswa dapat menggunakan media sosial untuk mencari sumber belajar.”","Fakta","Pernyataan tersebut menggambarkan fungsi yang dapat diamati dan diverifikasi."],
+["“Belajar tanpa media sosial tentu jauh lebih menyenangkan.”","Opini","Kata “lebih menyenangkan” merupakan penilaian yang bergantung pada pengalaman atau pandangan."],
+];
+function practice(){
+const box=document.getElementById('practice');
+practiceData.forEach((x,i)=>{
+box.innerHTML+=`<div class="statement"><strong>${i+1}. ${x[0]}</strong><br>
+<select id="p${i}"><option value="">-- pilih --</option><option>Fakta</option><option>Opini</option><option>Asumsi</option></select>
+<button class="btn" onclick="checkP(${i})">Cek</button><div id="pf${i}" class="feedback"></div></div>`;
+});
+}
+function checkP(i){
+const v=document.getElementById('p'+i).value, f=document.getElementById('pf'+i);
+if(!v){f.className="feedback wrong";f.style.display="block";f.textContent="Pilih salah satu kategori terlebih dahulu.";return}
+f.style.display="block";f.className="feedback "+(v===practiceData[i][1]?"correct":"wrong");
+f.textContent=(v===practiceData[i][1]?"Benar! ":"Belum tepat. ")+practiceData[i][2];
+}
+const huntData=[
+["“Sejumlah penelitian tentang penggunaan perangkat digital menunjukkan bahwa notifikasi dan perpindahan perhatian yang berulang dapat mengganggu fokus.”","Fakta","Pernyataan merujuk pada hasil penelitian yang dapat diperiksa."],
+["“Penggunaan media sosial secara terus-menerus ketika sedang mengerjakan tugas dapat menghadirkan gangguan.”","Fakta","Pernyataan tentang kondisi penggunaan dan gangguan dapat diuji melalui pengamatan atau penelitian."],
+["“Media sosial selalu menurunkan prestasi belajar.”","Asumsi","Kata “selalu” membuat klaim sangat luas dan membutuhkan bukti yang sangat kuat; artikel justru menekankan perlunya pemeriksaan lebih hati-hati."],
+["“Evaluasi yang baik seharusnya melihat bukti penelitian serta kondisi yang menyertai penggunaan media sosial.”","Opini","Kata “seharusnya” menunjukkan penilaian atau anjuran penulis."],
+];
+function hunt(){
+const box=document.getElementById('hunt');
+huntData.forEach((x,i)=>{
+box.innerHTML+=`<div class="statement"><strong>${i+1}. ${x[0]}</strong><br>
+<select id="h${i}"><option value="">-- pilih --</option><option>Fakta</option><option>Opini</option><option>Asumsi</option></select>
+<button class="btn" onclick="checkH(${i})">Cek</button><div id="hf${i}" class="feedback"></div></div>`;
+});
+}
+function checkH(i){
+const v=document.getElementById('h'+i).value,f=document.getElementById('hf'+i);
+f.style.display="block";f.className="feedback "+(v===huntData[i][1]?"correct":"wrong");
+f.textContent=(v===huntData[i][1]?"Benar! ":"Belum tepat. ")+huntData[i][2];
+}
+const questions=[
+["q1","Manakah yang paling tepat disebut fakta dalam konteks artikel?","Pernyataan yang dapat diverifikasi melalui data atau sumber","Pernyataan yang paling disukai pembaca","Pernyataan yang selalu memakai kata “menurut saya”","Pernyataan yang belum perlu memiliki bukti"],
+["q2","Mengapa kata “selalu” perlu diperhatikan ketika mengevaluasi sebuah klaim?","Karena membuat cakupan klaim menjadi sangat luas","Karena otomatis membuat klaim menjadi fakta","Karena kata tersebut menunjukkan adanya data penelitian","Karena semua klaim dengan kata tersebut pasti salah"],
+["q3","Pernyataan “Media sosial merupakan ancaman terbesar bagi keberhasilan belajar” paling tepat dikategorikan sebagai ...","opini","fakta","asumsi","data"],
+["q4","Apa pertanyaan paling penting untuk menguji sebuah asumsi?","Apakah anggapan tersebut benar-benar didukung bukti?","Apakah kalimatnya panjang?","Apakah penulis menggunakan istilah ilmiah?","Apakah pembaca menyukai pendapat tersebut?"],
+["q5","Mengapa durasi penggunaan media sosial tidak cukup dijadikan satu-satunya ukuran dampak terhadap belajar?","Karena tujuan, jenis aktivitas, waktu, dan kondisi penggunaan juga perlu dipertimbangkan","Karena durasi tidak pernah berhubungan dengan kegiatan belajar","Karena semua penggunaan media sosial bermanfaat","Karena media sosial hanya digunakan untuk hiburan"],
+["q6","Apa kelemahan utama klaim “penggunaan media sosial selalu menurunkan prestasi belajar”?","Klaim terlalu luas sehingga perlu didukung bukti yang sesuai dengan cakupannya","Klaim tersebut tidak menggunakan istilah ilmiah","Klaim tersebut terlalu pendek untuk menjadi kalimat","Klaim tersebut pasti merupakan fakta"],
+["q7","Kalimat “Evaluasi yang baik seharusnya melihat bukti penelitian” mengandung ciri opini karena ...","mengandung penilaian atau anjuran tentang apa yang seharusnya dilakukan","memuat angka hasil penelitian","menyebutkan nama sebuah platform","dapat langsung dibuktikan dengan satu pengamatan"],
+["q8","Langkah setelah menemukan sebuah klaim dalam artikel adalah ...","memeriksa bukti yang mendukung klaim tersebut","langsung mempercayainya","langsung menolaknya","mengubah klaim menjadi opini"],
+["q9","Jika sebuah artikel menyatakan “semua siswa yang menggunakan media sosial mengalami penurunan prestasi”, bukti yang paling relevan untuk mengevaluasi klaim tersebut adalah ...","data penelitian yang mencakup siswa, pola penggunaan, dan hasil belajar secara memadai","pendapat satu orang siswa","komentar di media sosial","judul artikel yang menarik"],
+["q10","Kesimpulan yang paling sesuai dengan artikel latihan adalah ...","Dampak media sosial perlu dievaluasi berdasarkan bukti dan kondisi penggunaannya","Media sosial pasti buruk bagi semua siswa","Media sosial pasti meningkatkan prestasi semua siswa","Durasi penggunaan adalah satu-satunya faktor yang menentukan hasil belajar"]
+];
+const correct=[0,0,0,0,0,0,0,0,0,0];
+const explanations=[
+["Pilihan ini tepat karena fakta dapat diverifikasi melalui data atau sumber.","Pilihan ini tidak mendefinisikan fakta karena kesukaan pembaca bersifat subjektif.","Pilihan ini bukan ciri umum fakta; penggunaan frasa tertentu tidak menentukan status bukti.","Pilihan ini justru menggambarkan pernyataan tanpa tuntutan bukti, bukan definisi fakta."],
+["Cakupan kata “selalu” menjadikan klaim berlaku tanpa pengecualian sehingga membutuhkan bukti yang sesuai.","Kata tersebut tidak mengubah klaim menjadi fakta secara otomatis.","Kehadiran kata tersebut tidak menunjukkan adanya data penelitian.","Kata tersebut tidak membuat semua klaim pasti salah; yang perlu diperiksa adalah bukti dan cakupannya."],
+["“Terbesar” merupakan penilaian yang memerlukan dasar pembanding sehingga pernyataan tersebut merupakan opini.","Pernyataan tersebut bukan fakta hanya karena membahas keberhasilan belajar.","Pernyataan itu tidak terutama berupa anggapan sebab-akibat yang belum dibuktikan, melainkan penilaian.","“Data” bukan kategori yang tepat untuk kalimat penilaian tersebut."],
+["Asumsi perlu diuji dengan bukti untuk mengetahui apakah anggapan yang mendasarinya dapat dipertanggungjawabkan.","Panjang kalimat tidak menentukan apakah sebuah asumsi benar.","Istilah ilmiah tidak otomatis membuktikan sebuah anggapan.","Kesukaan pembaca bukan bukti untuk menguji kebenaran asumsi."],
+["Artikel menekankan bahwa tujuan, jenis aktivitas, waktu, dan kondisi penggunaan ikut menentukan konteks dampaknya.","Pernyataan bahwa durasi tidak pernah berhubungan terlalu mutlak dan tidak didukung artikel.","Artikel tidak menyatakan semua penggunaan bermanfaat.","Artikel menyebut penggunaan dapat memiliki tujuan yang beragam, bukan hanya hiburan."],
+["Kata “selalu” membuat cakupan klaim sangat luas dan perlu bukti yang memadai untuk seluruh cakupan tersebut.","Istilah ilmiah bukan syarat utama untuk menilai kekuatan bukti.","Panjang kalimat tidak menentukan validitas klaim.","Klaim tidak menjadi fakta hanya karena dinyatakan dalam bentuk kalimat berita."],
+["Kata “seharusnya” menunjukkan anjuran atau penilaian mengenai tindakan yang dianggap tepat.","Kalimat tersebut tidak menyajikan angka hasil penelitian.","Penyebutan platform bukan alasan sebuah kalimat menjadi opini.","Satu pengamatan tidak otomatis membuktikan penilaian normatif tersebut."],
+["Memeriksa bukti membantu menentukan apakah klaim memiliki dasar yang memadai.","Mempercayai klaim sebelum memeriksa bukti bertentangan dengan evaluasi kritis.","Menolak klaim sebelum memeriksa bukti juga tidak menunjukkan evaluasi yang baik.","Mengubah bentuk kalimat tidak mengevaluasi kebenaran klaim."],
+["Data yang relevan harus cukup mewakili klaim dan memuat variabel yang berkaitan dengan pola penggunaan serta hasil belajar.","Pendapat satu orang tidak cukup untuk mengevaluasi klaim yang mencakup semua siswa.","Komentar media sosial bukan bukti yang memadai untuk klaim universal.","Judul artikel tidak menjadi bukti empiris atas klaim."],
+["Artikel menekankan pentingnya bukti serta kondisi penggunaan dan menolak kesimpulan yang terlalu luas.","Artikel tidak menyatakan media sosial pasti buruk bagi semua siswa.","Artikel juga tidak menyatakan media sosial pasti meningkatkan prestasi semua siswa.","Artikel secara eksplisit menyatakan faktor penggunaan perlu dipertimbangkan selain durasi."]
+];
+function buildQuiz(){
+const form=document.getElementById('quiz');
+questions.forEach((q,i)=>{
+let s=`<div class="quiz-q"><h3>${i+1}. ${q[1]}</h3>`;
+for(let j=2;j<6;j++) s+=`<label class="option"><input type="radio" name="${q[0]}" value="${j-2}" onchange="updateProgress()"> ${String.fromCharCode(65+j-2)}. ${q[j]}</label>`;
+s+=`</div>`;form.innerHTML+=s;
+});
+}
+function updateProgress(){
+const answered=document.querySelectorAll('#quiz input[type=radio]:checked').length;
+document.getElementById('progress').style.width=(answered/questions.length*100)+'%';
+}
+function grade(e){
+e.preventDefault();let score=0,detail=[];
+questions.forEach((q,i)=>{
+const sel=document.querySelector(`input[name="${q[0]}"]:checked`);
+const val=sel?Number(sel.value):-1;if(val===correct[i])score++;
+detail.push(val===correct[i]);
+});
+const pct=score/questions.length*100;
+let msg=pct>=80?"Hebat! Kamu sudah cukup kuat mengevaluasi gagasan.":pct>=60?"Bagus! Tinggal perkuat kemampuan memeriksa bukti dan cakupan klaim.":"Ayo belajar lagi. Fokus pada perbedaan bukti, penilaian, dan anggapan yang belum terbukti.";
+document.getElementById('result').innerHTML=`<div class="result"><h2>Hasil Evaluasi</h2><div class="score">${score}/${questions.length}</div><p><strong>${pct}%</strong></p><p>${msg}</p><p>${score<8?"Saran: baca kembali bagian Materi dan kerjakan Latihan sebelum mencoba lagi.":"Saran: lanjutkan dengan latihan membuat alasan berbasis bukti."}</p><button class="primary" onclick="show('materi')">Review Materi</button></div>`;
+document.getElementById('result').scrollIntoView({behavior:'smooth'});
+}
+function resetQuiz(){document.getElementById('quiz').reset();document.getElementById('result').innerHTML="";document.getElementById('progress').style.width="0%";window.scrollTo({top:0,behavior:'smooth'})}
+function show(id){
+document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});
+}
+practice();hunt();buildQuiz();
+</script>
+</body>
+</html>
